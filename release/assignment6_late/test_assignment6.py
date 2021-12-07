@@ -376,7 +376,7 @@ def test_3_9(answer):
 def test_4_1(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert answer.format.feature == 'countries', "Make sure you are extracting the correct feature from the world data."
-    assert answer.url == "https://vega.github.io/vega-datasets/data/world-110m.json", "Make sure you are using the correct URL."
+    assert answer.url == "https://vega.github.io/vega-datasets/data/world-110m.json" or answer.url == "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/world-110m.json", "Make sure you are using the correct URL."
     return(success)
 
 def test_4_2(answer):
@@ -394,7 +394,7 @@ def test_4_2(answer):
 
 def test_4_3_1(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
-    assert answer.data.url == 'https://vega.github.io/vega-datasets/data/world-110m.json', 'Make sure you are using the correct data source.'
+    assert answer.data.url == 'https://vega.github.io/vega-datasets/data/world-110m.json' or answer.data.url == 'https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/world-110m.json', 'Make sure you are using the correct data source.'
     assert len(answer.layer) == 2, "Make sure you are combining both plots."
     c2 = answer.layer[1]
     assert c2.mark.type == 'geoshape', 'Make sure the mark is of type geoshape.'
